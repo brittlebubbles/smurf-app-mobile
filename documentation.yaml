@@ -1,0 +1,58 @@
+#All API routes for SmurfApp 
+
+swagger: '2.0'
+info:
+  title: SmurfApp API
+  description: Move your app forward with the SmurfApp API
+  version: "1.0.0"
+basePath: /v1
+produces:
+  - application/json
+paths:
+  /users:
+    get:
+      summary: Users
+      description: |
+        Gives the user details on that route. This is taken from the Firebase Auth LIb
+      parameters:
+        - name: id
+          in: query
+          description: User Id.
+          required: true
+          type: id
+          format: double
+      tags:
+        - Users
+      responses:
+        200:
+          description: An object of user details
+          schema:
+            type: object
+            items:
+              $ref: '#/definitions/Users'
+  /posts:
+    get:
+      summary: News Post
+      description: |
+        Gives the user avaialble news post on that route.
+      parameters:
+        - id:
+          name:
+          text:
+          date:
+          avatar:
+          image:
+          in: query
+          description: User Id.
+          required: true
+          type: id
+          format: double
+      tags:
+        - Users
+      responses:
+        200:
+          description: An object of user details
+          schema:
+            type: object
+            items:
+              $ref: '#/definitions/Users'
